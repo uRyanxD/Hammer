@@ -44,7 +44,7 @@ if [ ! -f "${VANILLA_JAR}-cm.jar" ]; then
         --auto-lvt BASIC \
         -i "$VANILLA_JAR.jar" \
         -m "$CLASS_MAPPINGS" \
-        -o "${VANILLA_JAR}-cm.jar"; then
+        -o "${VANILLA_JAR}-cm.jar" > /dev/null 2>&1; then
     echo "Failed to apply class mappings."
     exit 1
   fi
@@ -56,7 +56,7 @@ if [ ! -f "${VANILLA_JAR}-mm.jar" ]; then
         --auto-member TOKENS \
         -i "${VANILLA_JAR}-cm.jar" \
         -m "$MEMBER_MAPPINGS" \
-        -o "${VANILLA_JAR}-mm.jar"; then
+        -o "${VANILLA_JAR}-mm.jar" > /dev/null 2>&1; then
     echo "Failed to apply member mappings."
     exit 1
   fi
@@ -68,7 +68,7 @@ if [ ! -f "${VANILLA_JAR}-mapped.jar" ]; then
         -i "${VANILLA_JAR}-mm.jar" \
         --access-transformer "$ACCESS_TRANSFORMS" \
         -m "$PACKAGE_MAPPINGS" \
-        -o "${VANILLA_JAR}-mapped.jar"; then
+        -o "${VANILLA_JAR}-mapped.jar" > /dev/null 2>&1; then
     echo "Failed to create remapped jar."
     exit 1
   fi
