@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-TEMP_DIR="temp"
+basedir="$(pwd -P)"
+TEMP_DIR="$basedir/temp"
 MINECRAFT_VERSION="1.8.8"
 VANILLA_JAR="$TEMP_DIR/$MINECRAFT_VERSION"
 MAPPED_JAR="${VANILLA_JAR}-mapped.jar"
