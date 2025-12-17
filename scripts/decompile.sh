@@ -19,6 +19,8 @@ if [ ! -d "$CLASSES_DIR" ]; then
     echo "Failed to extract classes from mapped jar."
     exit 1
   fi
+
+  cd "$basedir"
 fi
 
 if [ ! -d "$DECOMPILE_DIR" ]; then
