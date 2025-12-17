@@ -3,8 +3,8 @@ set -e
 
 (
     git submodule update --init &&
-    ./remap.sh &&
-    ./decompile.sh
+    ./scripts/remap.sh &&
+    ./scripts/decompile.sh
 ) || {
     echo "Failed to complete setup."
     exit 1
